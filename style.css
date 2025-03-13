@@ -1,0 +1,43 @@
+body{
+    /* display: flex; */
+    justify-content: right;
+    /* justify-items: center; */
+    align-items: end;
+    height: 95vh;
+    /* background-color: black; */
+    background-image: url("https://marketplace.canva.com/EAGPIDVZ0-A/1/0/1131w/canva-peach-aesthetic-background-flyer-IqGDJ_simvM.jpg");
+    background-size:cover;
+
+
+
+}
+.book{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr) ;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4rem;
+    margin-left: 5rem;
+
+
+}
+img{
+    height: 35vh;
+    margin: auto;
+    margin-top: 2rem;
+    cursor: pointer;
+    
+}
+a{
+    margin: 3rem;
+    display: block;
+    box-sizing: border-box;
+}
+    
+.heading{
+    font-weight: bolder;    
+    text-align: center;
+
+    font-size: 3.5rem;
+    color: rgb(23, 23, 23);
+}
+
