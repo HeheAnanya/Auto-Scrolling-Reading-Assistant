@@ -5,23 +5,22 @@ let lastScrollTime = Date.now();  // Calculating time
 let isScrollingPaused = true; // Check if page is scrolling?
 const content = document.querySelector(".content"); // Select book 
 
-if (!content) {
-    console.error("No content found on this page.");
-} else {
-    const observer = new IntersectionObserver(handleVisibilityChange, { threshold: 0.7 });
-    observer.observe(content);
 
-    // Start scrolling after 10 sec delay when user enters the content page
-    setTimeout(() => {;
-        isScrollingPaused = false; // Allow scrolling after delay
-        startScrolling();
-    }, 10000);
-}
+const observer = new IntersectionObserver(handleVisibilityChange, { threshold: 0.7 });
+observer.observe(content);
+
+// Start scrolling after 10 sec delay when user enters the content page
+setTimeout(() => {;
+    isScrollingPaused = false; // Allow scrolling after delay
+    startScrolling();
+}, 10000);
+
 
 function startScrolling() {
     if (!content || isScrollingPaused) return;     // Page won't scroll
-    if (scrollInterval) clearInterval(scrollInterval);
-
+    if (scrollInterval) {
+        clearInterval(scrollInterval)
+    }
 
     scrollInterval = setInterval(() => {
         window.scrollBy(0, scrollSpeed);
